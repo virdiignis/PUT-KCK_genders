@@ -35,7 +35,7 @@ def raw_data_to_params(data):
         label, fs, audio = data[i]
         labels.append(int(label == 'M'))
         audio, f = process_audio(fs, audio)
-        parameters.append([f, np.quantile(audio, 0.8), np.median(audio)])
+        parameters.append([f, np.quantile(audio, 0.8)])
     parameters = np.array(parameters)
     return labels, parameters
 
